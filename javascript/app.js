@@ -34,19 +34,18 @@ var destination = $('#destinationInput').val();
 var firstTrain = $('#firstTrainInput').val();
 var frequency = $('#frequencyInput').val();
 var currentTime = $('#currentTimeInput').val();
+
 // Define current time (hours + minutes) and place in variable 
-// Tell the TA's about my code challenge I overame using multiple variables. I did it!
 var hourNow = moment().hour();
 var minuteNow = moment().minute();
-// var displayTime = 
-console.log(hourNow, minuteNow);
-// var currentTime = $('#currentTimeInput').val("e.g. 12:00 am/pm");
 $('#currentTimeInput').val(hourNow + " " + ":" + " " + minuteNow);
 console.log("Working?");
 
-// // Create variable with current date
-// var d = new date();
-// console.log(d);
+// Trains run every 15 minutes 
+var nextTrain = moment().add(15, "minutes");
+var nextTrainHour = moment(nextTrain).hour();
+var nextTrainMinute = moment(nextTrain).minute();
+console.log(nextTrainHour, nextTrainMinute);
 
 // SECOND create new row
 var newRow = $("<tr>");
@@ -54,7 +53,7 @@ var newRow = $("<tr>");
 newRow.append("<td>" + trainName + "</td>");
 newRow.append("<td>" + destination + "</td>");
 newRow.append("<td>" + frequency + "</td>");
-newRow.append("<td>" + " " + "</td>");
+newRow.append("<td>" + nextTrainHour + " " + " : " + " " + nextTrainMinute + " " + "</td>");
 newRow.append("<td>" + " " + "</td>");
 newRow.append("<td>" + hourNow + " " + " : " + " " + minuteNow + " " + "</td>");
 
