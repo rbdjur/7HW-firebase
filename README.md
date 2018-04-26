@@ -1,4 +1,4 @@
-HW7-firebase
+#HW7-firebase
 Description: 
 * Create a simulator that resembles software/program that creates time schedule for trains.  The simulator demonstrates time of arrival, time of departure, and next train arrival.  
 
